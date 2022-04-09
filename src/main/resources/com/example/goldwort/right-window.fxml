@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="376.0" spacing="20.0" style="-fx-background-color: GoldenRod;" styleClass="back" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.goldwort.controller.RightController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Text fx:id="info" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="320.13674545288086">
+        <font>
+            <Font name="Times New Roman" size="16.0" />
+        </font>
+        <effect>
+            <Bloom />
+        </effect>
+    </Text>
+    <BorderPane prefHeight="181.0" prefWidth="336.0">
+        <top>
+            <Text fx:id="klinger" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="222.97264862060547" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Times New Roman Bold" size="32.0" />
+                </font></Text>
+        </top>
+        <center>
+            <Button fx:id="Enter" mnemonicParsing="false" prefHeight="29.0" prefWidth="77.0" style="-fx-background-color: Gold;" text="Next" textAlignment="CENTER" textFill="#040404" textOverrun="CLIP" BorderPane.alignment="CENTER">
+                <font>
+                    <Font size="14.0" />
+                </font>
+                <effect>
+                    <ColorAdjust />
+                </effect>
+            </Button>
+        </center>
+        <bottom>
+            <TextField fx:id="input" style="-fx-background-color: SeaShell;" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Times New Roman" size="15.0" />
+                </font>
+            </TextField>
+        </bottom>
+        <left>
+            <Text fx:id="out" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: LightSlateGray;" wrappingWidth="187.47009658813477" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Times New Roman" size="18.0" />
+                </font>
+            </Text>
+        </left>
+    </BorderPane>
+    <BorderPane maxHeight="1.7976931348623157E308" prefHeight="125.0" prefWidth="322.0">
+        <right>
+            <Text fx:id="score" strokeType="OUTSIDE" strokeWidth="0.0" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Times New Roman" size="14.0" />
+                </font>
+            </Text>
+        </right>
+        <left>
+            <Text fx:id="count" strokeType="OUTSIDE" strokeWidth="0.0" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Times New Roman" size="14.0" />
+                </font>
+            </Text>
+        </left>
+    </BorderPane>
+
+    <Label fx:id="welcomeText" />
+</VBox>

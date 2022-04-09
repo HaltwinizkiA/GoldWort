@@ -1,7 +1,7 @@
 package com.example.goldwort.controller;
 
 import com.example.goldwort.Starter;
-import com.example.goldwort.WordService;
+import com.example.goldwort.service.WordService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,21 +22,21 @@ public class StartWindowController {
     private URL location;
 
     @FXML
-    private Button deutsch;
+    private Button left;
 
     @FXML
-    private Button russisch;
+    private Button right;
 
     @FXML
     private TextField wordPath;
 
     @FXML
     void initialize() {
-        deutsch.setOnAction(event -> {
-            WordService wordService=new WordService(wordPath.getText());
-            try {
+        left.setOnAction(event -> {
+                    WordService wordService = new WordService(wordPath.getText());
+                    try {
                         Stage stage = new Stage();
-                        FXMLLoader fxmlLoader = new FXMLLoader(Starter.class.getResource("deutsch-window.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(Starter.class.getResource("left-window.fxml"));
                         Scene scene = new Scene(fxmlLoader.load(), 376, 368);
                         stage.setScene(scene);
                         stage.setTitle("Deutsch mode");
@@ -49,11 +49,15 @@ public class StartWindowController {
 
 
         );
-        russisch.setOnAction(event -> {
+        right.setOnAction(event -> {
             try {
-                WordService wordService=new WordService(wordPath.getText());
+                String s = wordPath.getText();
+                WordService wordService = new WordService(wordPath.getText());
+                if (wordService.getWordList() == null) {
+                    wordService = new WordService();
+                }
                 Stage stage = new Stage();
-                FXMLLoader fxmlLoader = new FXMLLoader(Starter.class.getResource("russisch-window.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(Starter.class.getResource("right-window.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 376, 368);
                 stage.setScene(scene);
                 stage.setTitle("Russisch mode");

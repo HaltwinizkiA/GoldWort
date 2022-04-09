@@ -8,6 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Starter extends Application {
+    public static void main(String[] args) {
+        launch();
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Starter.class.getResource("start-window.fxml"));
@@ -16,9 +20,5 @@ public class Starter extends Application {
         stage.setTitle("GoldWort");
         stage.setResizable(false);
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }
